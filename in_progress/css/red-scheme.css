@@ -180,7 +180,7 @@ a, a:visited {
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 3px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 3px;
   z-index: 9999;
-  padding: 25px 0px 12px 0px;
+  padding: 25px 0px 16px 0px;
   overflow: visible;
   transition: padding 0.3s ease-in-out;
   -moz-transition: padding 0.3s ease-in-out;
