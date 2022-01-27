@@ -63,7 +63,8 @@
 
 					<div class="pull-left logo">
 						<a href="index.html">
-							<img src="images/logo.png" alt="Medigo">
+							<img src="images/logo.png">
+							Mars Rover by Team Deimos
 						</a>
 					</div>	<!-- /.logo -->
 
@@ -72,22 +73,15 @@
 						<nav class="main-nav visible-md visible-lg">
 							<ul class="sf-menu">
 								<li><a href="index.html">Home</a></li>
-					            <li><a href="#">Portfolio</a>
+					            <li><a href="#">Gallery</a>
 					            	<ul>
-					            		<li><a href="portfolio.html">Portfolio Grid</a></li>
 					            		<li><a href="project-image.html">Project Image</a></li>
 					            		<li><a href="project-slideshow.html">Project Slideshow</a></li>
 					            	</ul>
 					            </li>
-					            <li><a href="#">Blog</a>
-									<ul>
-										<li><a href="blog.html">Blog Standard</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
-                                        <li><a href="#">visit templatemo</a></li>
-									</ul>
+					            <li><a href="blog.html">Blogs</a>
 					            </li>
-					            <li><a href="archives.html">Archives</a></li>
-					            <<li><a href="team.html">Team</a></li>
+					            <li><a href="team.html">Team</a></li>
           						<li class="active"><a href="contact.html">Sponsor Us</a></li>
 							</ul> <!-- /.sf-menu -->
 						</nav> <!-- /.main-nav -->
@@ -131,10 +125,8 @@
 					<div class="col-md-12">
 						<div class="contact-wrapper">
 							<h3>Get In Touch With Us</h3>
-							<p>Nihil, aperiam, ad molestiae ut enim reprehenderit rem repudiandae ducimus dolorum obcaecati rerum accusamus provident atque eos cum. Reiciendis, modi, sint, vel, eligendi veniam esse qui quasi voluptas recusandae eum accusamus error animi expedita amet rem ad quos.</p>
 							<div class="contact-map">
-			                    <div class="google-map-canvas" id="map-canvas" style="height: 320px;">
-			                    </div>
+			                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3391.5653104643234!2d76.99330361524171!3d31.782339881283765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3904e5ca553f4a27%3A0xe0c4d446cc9584ca!2sIIT%20MANDI%20NORTH%20CAMPUS!5e0!3m2!1sen!2sin!4v1643274623247!5m2!1sen!2sin" width=100% height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 			                </div>
 						</div> <!-- /.contact-wrapper -->
 					</div> <!-- /.col-md-12 -->
@@ -144,7 +136,7 @@
                         <div class="contact-form">
                             <h3>Send a Direct Message</h3>
 	                        <div class="widget-inner">
-                            <form action="#" method="post" id="contact-form">
+                            <form action="https://formspree.io/f/xlezjrrq" method="post" id="contact-form">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <p>
@@ -192,37 +184,8 @@
 
 			<div class="col-md-4">
 				<div class="sidebar">
-					<div class="sidebar-widget">
-						<h5 class="widget-title">Recent Posts</h5>
-						<div class="last-post clearfix">
-							<div class="thumb pull-left">
-								<a href="#"><img src="images/includes/blogthumb1.jpg" alt=""></a>
-							</div>
-							<div class="content">
-								<span>24 February 2084</span>
-								<h4><a href="#">Standard Post Formating Medigo</a></h4>
-							</div>
-						</div> <!-- /.last-post -->
-						<div class="last-post clearfix">
-							<div class="thumb pull-left">
-								<a href="#"><img src="images/includes/blogthumb2.jpg" alt=""></a>
-							</div>
-							<div class="content">
-								<span>24 February 2084</span>
-								<h4><a href="#">Standard Post Formating Medigo</a></h4>
-							</div>
-						</div> <!-- /.last-post -->
-						<div class="last-post clearfix">
-							<div class="thumb pull-left">
-								<a href="#"><img src="images/includes/blogthumb3.jpg" alt=""></a>
-							</div>
-							<div class="content">
-								<span>24 February 2084</span>
-								<h4><a href="#">Standard Post Formating Medigo</a></h4>
-							</div>
-						</div> <!-- /.last-post -->
-					</div> <!-- /.sidebar-widget -->
-					<div class="sidebar-widget">
+					
+					<!-- <div class="sidebar-widget">
 						<h5 class="widget-title">Categories</h5>
 						<div class="row categories">
 							<div class="col-md-6">
@@ -239,16 +202,18 @@
 									<li><a href="#">Business</a></li>
 								</ul>
 							</div>
-						</div> <!-- /.row -->
-					</div> <!-- /.sidebar-widget -->
+						</div>
+					</div>  -->
+
 					<div class="sidebar-widget">
-						<h5 class="widget-title">Flickr Feed</h5>
+						<h5 class="widget-title">Gallery</h5>
 						<ul id="flickr-feed" class="thumbs"></ul>
 					</div> <!-- /.sidebar-widget -->
-					<div class="sidebar-widget">
+
+					<!-- <div class="sidebar-widget">
 						<h5 class="widget-title">Text Widget</h5>
 						<p class="light-text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient… </p>
-					</div> <!-- /.sidebar-widget -->
+					</div> -->
 				</div> <!-- /.sidebar -->
 			</div> <!-- /.col-md-4 -->
 
@@ -281,27 +246,7 @@
 	<!-- Scripts -->
 	<script src="js/min/plugins.min.js"></script>
 	<script src="js/min/medigo-custom.min.js"></script>
-	<script>
-        function initialize() {
-          var mapOptions = {
-            zoom: 14,
-            center: new google.maps.LatLng(13.758468, 100.567481)
-          };
-
-          var map = new google.maps.Map(document.getElementById('map-canvas'),
-              mapOptions);
-        }
-
-        function loadScript() {
-          var script = document.createElement('script');
-          script.type = 'text/javascript';
-          script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
-              'callback=initialize';
-          document.body.appendChild(script);
-        }
-
-        window.onload = loadScript;
-    </script>
+	
 
 
 </body>
