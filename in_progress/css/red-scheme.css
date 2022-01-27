@@ -59,7 +59,7 @@ h6 {
 }
 
 p {
-  margin: 0 0 20px 0;
+  margin: 0 8px 20px 8px;
 }
 p img {
   margin: 0;
@@ -443,7 +443,7 @@ input.mainBtn {
 }
 
 #homeIntro {
-  background-image: url("../images/includes/homeintro.jpg");
+  background-image: url("../images/includes/origin.gif");
 }
 
 #portfolio {
@@ -941,6 +941,7 @@ blockquote {
 .thumb-post img {
   width: 100%;
   height: auto;
+  margin: 0px 0px 20px;
 }
 
 /*------------------------------------------------------
