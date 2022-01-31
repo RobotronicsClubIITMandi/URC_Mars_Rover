@@ -11,27 +11,28 @@
 	Medigo Template
 	http://www.templatemo.com/preview/templatemo_460_medigo
     -->
+	{% load static %}
 
 	<!-- Google Fonts -->
 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700itali" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,500,200,100,600" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="css/misc.css">
-	<link rel="stylesheet" href="css/red-scheme.css">
+	<link rel="stylesheet" href={% static "bootstrap/bootstrap.css"%}>
+	<link rel="stylesheet" href={% static "css/misc.css"%}>
+	<link rel="stylesheet" href={% static "css/red-scheme.css"%}>
 	
 	<!-- JavaScripts -->
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src={% static "js/jquery-1.10.2.min.js"%}></script>
+	<script src={% static "js/jquery-migrate-1.2.1.min.js"%}></script>
 
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href={% static "images/favicon.ico"%} type="image/x-icon" />
 
 </head>
 <body>
 	<div class="responsive_menu">
         <ul class="main_menu">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="project-slideshow.html">Gallery</a>
             </li>
             <li><a href="blog.html">Blogs</a>
