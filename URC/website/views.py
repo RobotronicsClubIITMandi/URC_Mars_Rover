@@ -13,5 +13,8 @@ def team(request):
 def blog(req):
     return render(req, 'blog.html', context={})
 
+def gallery(req):
+    return render(req, 'gallery.html', context={})
+
 def contact(req):
     return render(req, 'contact.html', context={})

@@ -1,6 +1,9 @@
 # For macos
 *DS_Store*
 
+# Secrets
+*secrets.py*
+
 # Django #
 *.log
 *.pot

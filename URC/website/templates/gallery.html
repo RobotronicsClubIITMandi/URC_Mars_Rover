@@ -12,31 +12,33 @@
 	http://www.templatemo.com/preview/templatemo_460_medigo
     -->
 
+	{% load static %}
+
 	<!-- Google Fonts -->
 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700itali" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,500,200,100,600" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="css/misc.css">
-	<link rel="stylesheet" href="css/red-scheme.css">
+	<link rel="stylesheet" href={% static "bootstrap/bootstrap.css"%}>
+	<link rel="stylesheet" href={% static "css/misc.css"%}>
+	<link rel="stylesheet" href={% static "css/red-scheme.css"%}>
 	
 	<!-- JavaScripts -->
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src={% static "js/jquery-1.10.2.min.js"%}></script>
+	<script src={% static "js/jquery-migrate-1.2.1.min.js"%}></script>
 
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href={% static "images/favicon.ico"%} type="image/x-icon" />
 
 </head>
 <body>
 	<div class="responsive_menu">
         <ul class="main_menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="project-slideshow.html">Gallery</a>
+            <li><a href={% url 'index'%}>Home</a></li>
+            <li><a href={% url 'gallery'%}>Gallery</a>
             </li>
-            <li><a href="blog.html">Blogs</a>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="contact.html">Sponsor Us</a></li>
+            <li><a href={% url 'blog'%}>Blogs</a>
+            <li><a href={% url 'team'%}>Team</a></li>
+            <li><a href={% url 'contact'%}>Sponsor Us</a></li>
         </ul> <!-- /.main_menu -->
     </div> <!-- /.responsive_menu -->
 
@@ -48,8 +50,8 @@
 				<div class="col-md-12">
 
 					<div class="pull-left logo">
-						<a href="index.html" style="font-size: 20px;">
-							<img src="images/logo.png">
+						<a href={% url 'index'%} style="font-size: 20px;">
+							<img src={% static "images/logo.png"%}>
 							&nbsp Mars Rover, IIT Mandi
 						</a>
 					</div>	<!-- /.logo -->
@@ -58,13 +60,13 @@
 
 						<nav class="main-nav visible-md visible-lg">
 							<ul class="sf-menu">
-								<li><a href="index.html">Home</a></li>
-					            <li class="active"><a href="project-slideshow.html">Gallery</a>
+								<li><a href={% url 'index'%}>Home</a></li>
+					            <li class="active"><a href={% url 'gallery'%}>Gallery</a>
 					            </li>
-					            <li><a href="blog.html">Blogs</a>
+					            <li><a href={% url 'blog'%}>Blogs</a>
 					            </li>
-					            <li><a href="team.html">Team</a></li>
-          						<li><a href="contact.html">Sponsor Us</a></li>
+					            <li><a href={% url 'team'%}>Team</a></li>
+          						<li><a href={% url 'contact'%}>Sponsor Us</a></li>
 							</ul> <!-- /.sf-menu -->
 						</nav> <!-- /.main-nav -->
 
@@ -104,8 +106,8 @@
 			<div class="col-md-8">
 					<div class="flexslider">
 						<ul class="slides">
-							<li><img src="images/includes/P4.jpg" alt="Slide 1"></li>
-							<li><img src="images/includes/P5.jpg" alt="Slide 2"></li>
+							<li><img src={% static "images/includes/P4.jpg"%} alt="Slide 1"></li>
+							<li><img src={% static "images/includes/P5.jpg"%} alt="Slide 2"></li>
 						</ul>
 					</div>
 
@@ -128,7 +130,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-2 col-md-8">
-					<p class="larger-text">Interested about Sponsoring us ? Go ahead and talk with us on the <a href="contact.html">contact page</a>. We'll be pleased to answer you within a few hours.</p>
+					<p class="larger-text">Interested about Sponsoring us ? Go ahead and talk with us on the <a href={% url 'contact'%}>contact page</a>. We'll be pleased to answer you within a few hours.</p>
 				</div> <!-- /.col-md-8 -->
 			</div> <!-- /.row -->
 		</div> <!-- /.container -->
@@ -155,7 +157,7 @@
                             <div class="overlay-inner">
                                 <div class="portfolio-infos">
                                     <span class="meta-category">Robotics</span>
-                                    <h3 class="portfolio-title"><a href="project-slideshow.html">Robotic Arm</a></h3>
+                                    <h3 class="portfolio-title"><a href={% url 'gallery'%}>Robotic Arm</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
                                     <a class="fancybox" href="images/includes/P1.jpg" title="Gloss Template">
@@ -164,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="images/includes/P1.jpg" alt="Gloss Template">
+                        <img src={% static "images/includes/P1.jpg"%} alt="Gloss Template">
 						</div>
 					</div> <!-- /.col-md-4 -->
 
@@ -174,7 +176,7 @@
                             <div class="overlay-inner">
                                 <div class="portfolio-infos">
                                     <span class="meta-category">Self Driving AI</span>
-                                    <h3 class="portfolio-title"><a href="project-slideshow.html">Autonomous Drone</a></h3>
+                                    <h3 class="portfolio-title"><a href={% url 'gallery'%}>Autonomous Drone</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
                                     <a class="fancybox" href="images/includes/P2.jpg" title="Ion Template">
@@ -183,7 +185,7 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="images/includes/P2.jpg" alt="Ion Template">
+                        <img src={% static "images/includes/P2.jpg"%} alt="Ion Template">
 						</div>
 					</div> <!-- /.col-md-4 -->
 
@@ -193,7 +195,7 @@
                             <div class="overlay-inner">
                                 <div class="portfolio-infos">
                                     <span class="meta-category">Software</span>
-                                    <h3 class="portfolio-title"><a href="project-slideshow.html">3D Terrain Mapper</a></h3>
+                                    <h3 class="portfolio-title"><a href={% url 'gallery'%}>3D Terrain Mapper</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
                                     <a class="fancybox" href="images/includes/P3.jpg" title="Freshness">
@@ -202,7 +204,7 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="images/includes/P3.jpg" alt="Freshness">
+                        <img src={% static "images/includes/P3.jpg"%} alt="Freshness">
 						</div>
 					</div> <!-- /.col-md-4 -->
 				</div> <!-- /.portfolio-holder -->
@@ -216,11 +218,11 @@
 				<div class="col-md-12">
 					<nav class="footer-nav clearfix">
 						<ul class="footer-menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="project-slideshow.html">Gallery</a></li>
-							<li><a href="blog.html">Blog Posts</a></li>
-							<li><a href="team.html">Team</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href={% url 'index'%}>Home</a></li>
+							<li><a href={% url 'gallery'%}>Gallery</a></li>
+							<li><a href={% url 'blog'%}>Blog Posts</a></li>
+							<li><a href={% url 'team'%}>Team</a></li>
+							<li><a href={% url 'contact'%}>Contact</a></li>
 						</ul> <!-- /.footer-menu -->
 					</nav> <!-- /.footer-nav -->
 				</div> <!-- /.col-md-12 -->
@@ -234,8 +236,8 @@
 	</footer> <!-- /.site-footer -->
 
 	<!-- Scripts -->
-	<script src="js/min/plugins.min.js"></script>
-	<script src="js/min/medigo-custom.min.js"></script>
+	<script src={% static "js/min/plugins.min.js"%}></script>
+	<script src={% static "js/min/medigo-custom.min.js"%}></script>
 
 
 </body>

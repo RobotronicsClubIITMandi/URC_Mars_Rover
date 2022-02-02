@@ -32,24 +32,24 @@
 
 	<div class="responsive_menu">
         <ul class="main_menu">
-            <li><a href="index.html">Home</a></li>
+            <li><a href={% url 'index'%}>Home</a></li>
             <li><a href="#">Portfolio</a>
             	<ul>
             		<li><a href="portfolio.html">Portfolio Grid</a></li>
             		<li><a href="project-image.html">Project Image</a></li>
-            		<li><a href="project-slideshow.html">Project Slideshow</a></li>
+            		<li><a href={% url 'gallery'%}>Project Slideshow</a></li>
             	</ul>
             </li>
             <li><a href="#">Blogs</a>
 				<ul>
-					<li><a href="blog.html">Blog Standard</a></li>
+					<li><a href={% url 'blog'%}>Blog Standard</a></li>
 					<li><a href="blog-single.html">Blog Single</a></li>
                     <li><a href="#">visit templatemo</a></li>
 				</ul>
             </li>
             <li><a href="archives.html">Archive</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="contact.html">Sponsor Us</a></li>
+            <li><a href={% url 'team'%}>Team</a></li>
+            <li><a href={% url 'contact'%}>Sponsor Us</a></li>
         </ul> <!-- /.main_menu -->
     </div> <!-- /.responsive_menu -->
 
@@ -61,7 +61,7 @@
 				<div class="col-md-12">
 
 					<div class="pull-left logo">
-						<a href="index.html">
+						<a href={% url 'index'%}>
 							<img src="images/logo.png" alt="Medigo by templatemo">
 						</a>
 					</div>	<!-- /.logo -->
@@ -70,24 +70,24 @@
 
 						<nav class="main-nav visible-md visible-lg">
 							<ul class="sf-menu">
-								<li><a href="index.html">Home</a></li>
+								<li><a href={% url 'index'%}>Home</a></li>
 					            <li><a href="#">Portfolio</a>
 					            	<ul>
 					            		<li><a href="portfolio.html">Portfolio Grid</a></li>
 					            		<li><a href="project-image.html">Project Image</a></li>
-					            		<li><a href="project-slideshow.html">Project Slideshow</a></li>
+					            		<li><a href={% url 'gallery'%}>Project Slideshow</a></li>
 					            	</ul>
 					            </li>
 					            <li><a href="#">Blog</a>
 									<ul>
-										<li><a href="blog.html">Blog Standard</a></li>
+										<li><a href={% url 'blog'%}>Blog Standard</a></li>
 										<li><a href="blog-single.html">Blog Single</a></li>
                                         <li><a href="#">visit templatemo</a></li>
 									</ul>
 					            </li>
 					            <li class="active"><a href="archives.html">Archives</a></li>
-					            <li><a href="team.html">Team</a></li>
-          						<li><a href="contact.html">Sponsor Us</a></li>
+					            <li><a href={% url 'team'%}>Team</a></li>
+          						<li><a href={% url 'contact'%}>Sponsor Us</a></li>
 							</ul> <!-- /.sf-menu -->
 						</nav> <!-- /.main-nav -->
 
@@ -245,11 +245,11 @@
 				<div class="col-md-12">
 					<nav class="footer-nav clearfix">
 						<ul class="footer-menu">
-							<li><a href="index.html">Home</a></li>
+							<li><a href={% url 'index'%}>Home</a></li>
 							<li><a href="portfolio.html">Portfolio</a></li>
-							<li><a href="blog.html">Blog Posts</a></li>
+							<li><a href={% url 'blog'%}>Blog Posts</a></li>
 							<li><a href="archives.html">Shortcodes</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href={% url 'contact'%}>Contact</a></li>
 						</ul> <!-- /.footer-menu -->
 					</nav> <!-- /.footer-nav -->
 				</div> <!-- /.col-md-12 -->

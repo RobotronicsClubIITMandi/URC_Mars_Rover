@@ -1,9 +1,11 @@
+from distutils.command.upload import upload
 from django.db import models
 
 # Create your models here.
 class Blog(models.Model):
     blog_title = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
+    img = models.ImageField(upload_to='blog_images/% Y/% m/% d/')
     text = models.CharField(max_length=10000)
 
 class Comments(models.Model):
