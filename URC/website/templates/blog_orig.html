@@ -105,24 +105,66 @@
 			<div class="col-md-8 blog-posts">
 				<div class="row">
 					<div class="col-md-12">
-						{% for blog in all_blogs %}
 						<div class="post-blog">
 							<div class="blog-image">
-								<a href={% url 'detailed-blog' blog.id %}>
-									<img src="{{ blog.img.url }}" alt="">
+								<a href="blog-1.html">
+									<img src={% static "images/includes/blog1.jpg"%} alt="">
 								</a>
 							</div> <!-- /.blog-image -->
 							<div class="blog-content">
-								<span class="meta-date">{{ blog.pub_date|date:"d M, Y D" }}</span>
-								{% comment %} TO_DO: Add comments <span class="meta-comments"><a href="#">0 Comments</a></span> {% endcomment %}
+								<span class="meta-date"><a href="#">28 January 2022</a></span>
+								<span class="meta-comments"><a href="#">0 Comments</a></span>
 								<!-- <span class="meta-author"><a href="#">Candy Sharp</a></span> -->
-								<h3><a href={% url 'detailed-blog' blog.id %}>{{ blog.blog_title }}</a></h3>
-								<p class="light-text">{{ blog.short_text |safe}}
-								<a href={% url 'detailed-blog' blog.id %}>Continue Reading...</a></p>
+								<h3><a href="blog-1.html">Introduction to URC</a></h3>
+								<p class="light-text">On 4th October 1957 began a promising journey that assured humans to explore this fathomless sky and not just be limited to the soil they were born in. What began with thrill, stimulation, blaze, rush, surge, and yet a tint of fear and twitchiness has taken a colossal form of a never-ending journey to quench man’s thirst for knowing what lies behind the sun, moon, planets and the stars and every phenomenon that till date has seemed bizarre!
+								<a href="blog-1.html">Continue Reading...</a></p>
 							</div> <!-- /.blog-content -->
 						</div> <!-- /.post-blog -->
-						{% endfor %}
-						
+						<div class="post-blog">
+							<div class="blog-image">
+								<a href="blog-2.html">
+									<img src="images/includes/blog2.jpg" alt="">
+								</a>
+							</div> <!-- /.blog-image -->
+							<div class="blog-content">
+								<span class="meta-date"><a href="#">15 February 2022</a></span>
+								<span class="meta-comments"><a href="#">0 Comments</a></span>
+								<!-- <span class="meta-author"><a href="#">Candy Sharp</a></span> -->
+								<h3><a href="blog-2.html">Blog 2</a></h3>
+								<p class="light-text">Coming Soon.
+								<a href="blog-2.html">Continue Reading...</a></p>
+							</div> <!-- /.blog-content -->
+						</div> <!-- /.post-blog -->
+						<div class="post-blog">
+							<div class="blog-image">
+								<a href="blog-3.html">
+									<img src="images/includes/blog3.jpg" alt="">
+								</a>
+							</div> <!-- /.blog-image -->
+							<div class="blog-content">
+								<span class="meta-date"><a href="#">5 March 2022</a></span>
+								<span class="meta-comments"><a href="#">0 Comments</a></span>
+								<!-- <span class="meta-author"><a href="#">Candy Sharp</a></span> -->
+								<h3><a href="blog-3.html">Blog 3</a></h3>
+								<p class="light-text">
+								Coming Soon.
+								<a href="blog-3.html">Continue Reading...</a></p>
+							</div> <!-- /.blog-content -->
+						</div> <!-- /.post-blog -->
+						<div class="post-blog">
+							<div class="blog-image">
+								<a href="blog-4.html">
+									<img src="images/includes/blog4.jpg" alt="">
+								</a>
+							</div> <!-- /.blog-image -->
+							<div class="blog-content">
+								<span class="meta-date"><a href="#">25 March 2022</a></span>
+								<span class="meta-comments"><a href="#">0 Comments</a></span>
+								<!-- <span class="meta-author"><a href="#">Candy Sharp</a></span> -->
+								<h3><a href="blog-4.html">Blog 4</a></h3>
+								<p class="light-text">Coming Soon.<a href="blog-4.html">Continue Reading...</a></p>
+							</div> <!-- /.blog-content -->
+						</div> <!-- /.post-blog -->
 					</div> <!-- /.col-md-12 -->
 					
 				</div> <!-- /.row -->
@@ -131,13 +173,20 @@
 			<div class="col-md-4">
 				<div class="sidebar">
 					<div class="sidebar-widget">
-						<h5 class="widget-title">All blogs</h5>
+						<h5 class="widget-title">Categories</h5>
 						<div class="row categories">
 							<div class="col-md-6">
 								<ul>
-									{% for blog in all_blogs %}
-										<li><a href={% url 'detailed-blog' blog.id %}>{{ blog.blog_title }}</a></li>
-									{% endfor %}
+									<li><a href="#">General</a></li>
+									<li><a href="#">Mechanical</a></li>
+									<li><a href="#">Electronics</a></li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul>
+									<li><a href="#">Communication</a></li>
+									<li><a href="#">Software</a></li>
+									<li><a href="#">Robotics</a></li>
 								</ul>
 							</div>
 						</div> <!-- /.row -->
