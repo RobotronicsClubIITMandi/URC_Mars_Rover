@@ -39,9 +39,9 @@
             <li><a href={% url 'team'%}>Team</a></li>
             <li><a href={% url 'contact'%}>Sponsor Us</a></li>
 			{% if user.is_authenticated %}
-				<li><a href={% url 'logout' %}>Logout</a></li>
+				<li class='active'><a href={% url 'logout' %}>Logout <img src="https://img.icons8.com/external-others-sbts2018/32/000000/external-logout-social-media-others-sbts2018.png"/> </a></li>
 			{% else %}
-				<li><a href={% url "social:begin" "google-oauth2" %}>Log in via Google</a></li>
+				<li class='active'><a href={% url "social:begin" "google-oauth2" %}><img src="https://img.icons8.com/fluency/32/000000/google-logo.png"/><img src="https://img.icons8.com/external-kmg-design-outline-color-kmg-design/32/000000/external-login-real-estate-kmg-design-outline-color-kmg-design.png"/></a></li>
 			{% endif %}
         </ul> <!-- /.main_menu -->
     </div> <!-- /.responsive_menu -->
@@ -71,10 +71,10 @@
 					            </li>
 					            <li><a href={% url 'team'%}>Team</a></li>
           						<li><a href={% url 'contact'%}>Sponsor Us</a></li>
-								{% if user.is_authenticated %}
-									<li class='active'><a href={% url 'logout' %}>Logout</a></li>
+								  {% if user.is_authenticated %}
+								  <li class='active'><a href={% url 'logout' %}>Logout <img src="https://img.icons8.com/external-others-sbts2018/32/000000/external-logout-social-media-others-sbts2018.png"/> </a></li>
 								{% else %}
-									<li class='active'><a href={% url "social:begin" "google-oauth2" %}>Log in via Google</a></li>
+									<li class='active'><a href={% url "social:begin" "google-oauth2" %}><img src="https://img.icons8.com/fluency/32/000000/google-logo.png"/><img src="https://img.icons8.com/external-kmg-design-outline-color-kmg-design/32/000000/external-login-real-estate-kmg-design-outline-color-kmg-design.png"/></a></li>
 								{% endif %}
 							</ul> <!-- /.sf-menu -->
 						</nav> <!-- /.main-nav -->
@@ -195,50 +195,56 @@
                         </div> <!-- /.blog-post-comments -->
                     </div> <!-- /.col-md-12 -->
 				</div> <!-- /.row --> {% endcomment %}
-				{% comment %} <div class="row">
+
+				<div class="row">
                     <div class="col-md-12">
                         <div class="comment-form">
-                            <h3>Leave a comment</h3>
-                            <div class="widget-inner">
-                            	<form action="#" method="post">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <p>
-                                            <label for="name-id">Your Name:</label>
-                                            <input type="text" id="name-id" name="name-id">
-                                        </p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p>
-                                            <label for="email-id">Email Address:</label>
-                                            <input type="text" id="email-id" name="email-id">
-                                        </p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p>
-                                            <label for="site-id">Your Site:</label>
-                                            <input type="text" id="site-id" name="site-id">
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p>
-                                            <label for="comment">Your comment:</label>
-                                            <textarea name="comment" id="comment" rows="5"></textarea>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <input class="mainBtn" type="submit" name="submit" value="Submit Comment" id="submit">
-                                    </div>
-                                </div>
-                                </form>
-                            </div> <!-- /.widget-inner -->
+							{% if user.is_authenticated %}
+								<h3>Leave a comment</h3>
+								<div class="widget-inner">
+									<form action="#" method="post">
+									<div class="row">
+										<div class="col-md-4">
+											<p>
+												<label for="name-id">Your Name:</label>
+												<input type="text" id="name-id" name="name-id">
+											</p>
+										</div>
+										<div class="col-md-4">
+											<p>
+												<label for="email-id">Email Address:</label>
+												<input type="text" id="email-id" name="email-id">
+											</p>
+										</div>
+										<div class="col-md-4">
+											<p>
+												<label for="site-id">Your Site:</label>
+												<input type="text" id="site-id" name="site-id">
+											</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<p>
+												<label for="comment">Your comment:</label>
+												<textarea name="comment" id="comment" rows="5"></textarea>
+											</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<input class="mainBtn" type="submit" name="submit" value="Submit Comment" id="submit">
+										</div>
+									</div>
+									</form>
+								</div> <!-- /.widget-inner -->
+							{% else %}
+								<a href={% url "social:begin" "google-oauth2" %}>! Sign in Using Google to comment</a>
+							{% endif %}
+                            
                         </div> <!-- /.widget-main -->
                     </div> <!-- /.col-md-12 -->
-                </div> <!-- /.row --> {% endcomment %}
+                </div> <!-- /.row --> 
 			</div> <!-- /.col-md-8 -->
 
 			<div class="col-md-4">

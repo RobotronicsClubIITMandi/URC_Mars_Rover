@@ -69,9 +69,9 @@
 								<li><a href={% url 'team' %}>Team</a></li>
 								<li class = 'active'><a href={% url 'contact' %}>Sponsor Us</a></li>
 								{% if user.is_authenticated %}
-									<li class='active'><a href={% url 'logout' %}>Logout</a></li>
+									<li class='active'><a href={% url 'logout' %}>Logout <img src="https://img.icons8.com/external-others-sbts2018/32/000000/external-logout-social-media-others-sbts2018.png"/> </a></li>
 								{% else %}
-									<li class='active'><a href={% url "social:begin" "google-oauth2" %}>Log in via Google</a></li>
+									<li class='active'><a href={% url "social:begin" "google-oauth2" %}><img src="https://img.icons8.com/fluency/32/000000/google-logo.png"/><img src="https://img.icons8.com/external-kmg-design-outline-color-kmg-design/32/000000/external-login-real-estate-kmg-design-outline-color-kmg-design.png"/></a></li>
 								{% endif %}
 							</ul> <!-- /.sf-menu -->
 						</nav> <!-- /.main-nav -->
