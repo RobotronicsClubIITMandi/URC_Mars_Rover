@@ -1,5 +1,6 @@
 from distutils.command.upload import upload
 from django.db import models
+from django.conf import settings
 import re
 
 # Create your models here.
@@ -14,5 +15,6 @@ class Blog(models.Model):
         return self.text[:text_len]
 
 class Comments(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     text = models.CharField(max_length=1000)
