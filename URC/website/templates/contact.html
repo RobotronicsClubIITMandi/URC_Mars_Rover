@@ -37,6 +37,11 @@
             <li><a href={% url 'blog' %}>Blogs</a>
             <li><a href={% url 'team' %}>Team</a></li>
             <li><a href={% url 'contact' %}>Sponsor Us</a></li>
+			{% if user.is_authenticated %}
+				<li><a href={% url 'logout' %}>Logout</a></li>
+			{% else %}
+				<li><a href={% url "social:begin" "google-oauth2" %}>Log in via Google</a></li>
+			{% endif %}
         </ul> <!-- /.main_menu -->
     </div> <!-- /.responsive_menu -->
 
@@ -63,6 +68,11 @@
 								<li><a href={% url 'blog' %}>Blogs</a>
 								<li><a href={% url 'team' %}>Team</a></li>
 								<li class = 'active'><a href={% url 'contact' %}>Sponsor Us</a></li>
+								{% if user.is_authenticated %}
+									<li class='active'><a href={% url 'logout' %}>Logout</a></li>
+								{% else %}
+									<li class='active'><a href={% url "social:begin" "google-oauth2" %}>Log in via Google</a></li>
+								{% endif %}
 							</ul> <!-- /.sf-menu -->
 						</nav> <!-- /.main-nav -->
 
