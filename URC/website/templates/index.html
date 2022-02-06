@@ -346,40 +346,21 @@
 		        	</div> <!-- /.col-md-12 -->
 		        </div> <!-- /.row -->
 		        <div class="row latest-posts">
+					{% for recent_blog in recent_blogs %}
 		        	<div class="col-md-4 col-sm-6">
-		        		<div class="blog-post clearfix">
+						<div class="blog-post clearfix">
 		        			<div class="thumb-post">
-		        				<a href="blog-1.html"><img src={% static "images/includes/blogthumb1.jpg" %} alt="" class="img-circle"></a>
+		        				<a href={% url 'detailed-blog' recent_blog.id %}><img src={% static "images/includes/blogthumb1.jpg" %} alt="" class="img-circle"></a>
 		        			</div>
 		        			<div class="blog-post-content">
-		        				<h4 class="post-title"><a href="blog-1.html">Blog 1</a></h4>
-		        				<h4 class="post-title"><a href="blog-1.html">Introduction to URC</a></h4>
-		        				<span class="meta-post-date">28th January 2022</span>
+		        				<h4 class="post-title"><a href={% url 'detailed-blog' recent_blog.id %}>Blog:</a></h4>
+		        				<h4 class="post-title"><a href={% url 'detailed-blog' recent_blog.id %}>{{ recent_blog.blog_title }}</a></h4>
+		        				<span class="meta-post-date">{{ blog.pub_date|date:"d M, Y D" }}</span>
 		        			</div>
-		        		</div> <!-- /.blog-post -->
-		        	</div> <!-- /.col-md-4 -->
-		        	<div class="col-md-4 col-sm-6">
-		        		<div class="blog-post clearfix">
-		        			<div class="thumb-post">
-		        				<a href="blog-2.html"><img src={% static "images/includes/blogthumb2.jpg" %} alt="" class="img-circle"></a>
-		        			</div>
-		        			<div class="blog-post-content">
-		        				<h4 class="post-title"><a href="blog-2.html">Blog 2</a></h4>
-		        				<span class="meta-post-date">15 February 2022</span>
-		        			</div>
-		        		</div> <!-- /.blog-post -->
-		        	</div> <!-- /.col-md-4 -->
-		        	<div class="col-md-4 col-sm-6">
-		        		<div class="blog-post clearfix">
-		        			<div class="thumb-post">
-		        				<a href="blog-3.html"><img src={% static "images/includes/blogthumb3.jpg" %} alt="" class="img-circle"></a>
-		        			</div>
-		        			<div class="blog-post-content">
-		        				<h4 class="post-title"><a href="blog-3.html">Blog 3 </a></h4>
-		        				<span class="meta-post-date">5th March 2022</span>
-		        			</div>
-		        		</div> <!-- /.blog-post -->
-		        	</div> <!-- /.col-md-4 -->
+		        		</div> 
+		        	</div> 
+					{% endfor %}
+		        	
 		        </div> <!-- /.row -->
 		    </div> <!-- /.container -->
 	    </div> <!-- /.parallax-overlay -->

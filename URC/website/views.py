@@ -7,7 +7,10 @@ from . forms import CommentForm
 
 
 def index(request):
-    return render(request, 'index.html', context={})
+    recent_blogs = Blog.objects.order_by('pub_date')
+    if(len(recent_blogs)>3):
+        recent_blogs = Blog.objects.order_by('pub_date')
+    return render(request, 'index.html', context={'recent_blogs':recent_blogs})
 
 def team(request):
     return render(request, 'team.html', context={})

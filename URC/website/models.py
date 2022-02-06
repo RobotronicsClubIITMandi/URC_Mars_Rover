@@ -8,6 +8,7 @@ class Blog(models.Model):
     blog_title = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     img = models.ImageField(upload_to='blogs/')
+    authors = models.CharField(max_length=200)
     text = models.CharField(max_length=10000)
 
     def short_text(self):
