@@ -11,32 +11,37 @@
 	Medigo Template
 	http://www.templatemo.com/preview/templatemo_460_medigo
     -->
-
+    {% load static %}
 	<!-- Google Fonts -->
 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700itali" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,500,200,100,600" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="css/misc.css">
-	<link rel="stylesheet" href="css/red-scheme.css">
+	<link rel="stylesheet" href={% static "bootstrap/bootstrap.css"%}>
+	<link rel="stylesheet" href={% static "css/misc.css"%}>
+	<link rel="stylesheet" href={% static "css/red-scheme.css"%}>
 	
 	<!-- JavaScripts -->
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src={% static "js/jquery-1.10.2.min.js"%}></script>
+	<script src={% static "js/jquery-migrate-1.2.1.min.js"%}></script>
 
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href={% static "images/favicon.ico"%} type="image/x-icon" />
 
 </head>
 <body>
 	<div class="responsive_menu">
         <ul class="main_menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="project-slideshow.html">Gallery</a>
+            <li><a href={% url 'index' %}>Home</a></li>
+            <li><a href={% url 'gallery' %}>Gallery</a>
             </li>
-            <li><a href="blog.html">Blogs</a>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="contact.html">Sponsor Us</a></li>
+            <li><a href={% url 'blog' %}>Blogs</a>
+            <li><a href={% url 'team' %}>Team</a></li>
+            <li><a href={% url 'contact' %}>Sponsor Us</a></li>
+            {% if user.is_authenticated %}
+                <li><a href={% url 'logout' %}>Logout</a></li>
+            {% else %}
+                <li><a href={% url "social:begin" "google-oauth2" %}>Log in via Google</a></li>
+            {% endif %}
         </ul> <!-- /.main_menu -->
     </div> <!-- /.responsive_menu -->
 
@@ -48,8 +53,8 @@
 				<div class="col-md-12">
 
 					<div class="pull-left logo">
-						<a href="index.html" style="font-size: 20px;">
-							<img src="images/logo.png">
+						<a href={% url 'index' %} style="font-size: 20px;">
+							<img src={% static "images/logo.png"%}>
 							&nbsp Mars Rover, IIT Mandi
 						</a>
 					</div>	<!-- /.logo -->
@@ -58,13 +63,16 @@
 
 						<nav class="main-nav visible-md visible-lg">
 							<ul class="sf-menu">
-								<li><a href="index.html">Home</a></li>
-					            <li><a href="project-slideshow.html">Gallery</a>
-					            </li>
-					            <li><a href="blog.html">Blogs</a>
-					            </li>
-					            <li class="active"><a href="team.html">Team</a></li>
-          						<li><a href="contact.html">Sponsor Us</a></li>
+								<li><a href={% url 'index' %}>Home</a></li>
+								<li><a href={% url 'gallery' %}>Gallery</a></li>
+								<li><a href={% url 'blog' %}>Blogs</a>
+								<li class='active'><a href={% url 'team' %}>Team</a></li>
+								<li><a href={% url 'contact' %}>Sponsor Us</a></li>
+                                {% if user.is_authenticated %}
+									<li class='active'><a href={% url 'logout' %}>Logout <img src="https://img.icons8.com/external-others-sbts2018/32/000000/external-logout-social-media-others-sbts2018.png"/> </a></li>
+								{% else %}
+									<li class='active'><a href={% url "social:begin" "google-oauth2" %}><img src="https://img.icons8.com/fluency/32/000000/google-logo.png"/><img src="https://img.icons8.com/external-kmg-design-outline-color-kmg-design/32/000000/external-login-real-estate-kmg-design-outline-color-kmg-design.png"/></a></li>
+								{% endif %}
 							</ul> <!-- /.sf-menu -->
 						</nav> <!-- /.main-nav -->
 
@@ -127,13 +135,13 @@
                                     <h3 class="portfolio-title"><a >Project Lead</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/khyati.jpeg" title="Khyati Agarwal">
+                                    <a class="fancybox" href={% static "images/team/khyati.jpeg" %} title="Khyati Agarwal">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/khyati.jpeg" alt="Khyati Agarwal">
+                        <img src={% static "images/team/khyati.jpeg" %} alt="Khyati Agarwal">
 					</div>
                     <h3 style="text-align: center;">Khyati Agarwal</h3>
 				</div>
@@ -147,13 +155,13 @@
                                     <h3 class="portfolio-title"><a >Management Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/dipanshu.jpeg" title="Dipanshu Verma">
+                                    <a class="fancybox" href={% static "images/team/dipanshu.jpeg" %} title="Dipanshu Verma">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/dipanshu.jpeg" alt="Dipanshu Verma">
+                        <img src={% static "images/team/dipanshu.jpeg" %} alt="Dipanshu Verma">
 					</div>
                     <h3 style="text-align: center;">Dipanshu Verma</h3>
 				</div>
@@ -167,13 +175,13 @@
                                     <h3 class="portfolio-title"><a >Management Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/abhishek.jpeg" title="Abhishek Parmar">
+                                    <a class="fancybox" href={% static "images/team/abhishek.jpeg" %} title="Abhishek Parmar">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/abhishek.jpeg" alt="Abhishek Parmar">
+                        <img src={% static "images/team/abhishek.jpeg" %} alt="Abhishek Parmar">
 					</div>
                     <h3 style="text-align: center;">Abhishek Parmar</h3>
 				</div>
@@ -187,13 +195,13 @@
                                     <h3 class="portfolio-title"><a >Management Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/ankit.jpg" title="Ankit Karan">
+                                    <a class="fancybox" href={% static "images/team/ankit.jpg" %} title="Ankit Karan">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/ankit.jpg" alt="Ankit Karan">
+                        <img src={% static "images/team/ankit.jpg" %} alt="Ankit Karan">
 					</div>
                     <h3 style="text-align: center;">Ankit Karan</h3>
 				</div>
@@ -207,13 +215,13 @@
                                     <h3 class="portfolio-title"><a >Management Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/ridhi.jpeg" title="Ridhi Ratan">
+                                    <a class="fancybox" href={% static "images/team/ridhi.jpeg" %} title="Ridhi Ratan">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/ridhi.jpeg" alt="Ridhi Ratan">
+                        <img src={% static "images/team/ridhi.jpeg" %} alt="Ridhi Ratan">
 					</div>
                     <h3 style="text-align: center;">Ridhi Ratan</h3>
 				</div>
@@ -227,13 +235,13 @@
                                     <h3 class="portfolio-title"><a >Software Team Lead</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/vivek.jpeg" title="Vivek Mittal">
+                                    <a class="fancybox" href={% static "images/team/vivek.jpeg" %} title="Vivek Mittal">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/vivek.jpeg" alt="Vivek Mittal">
+                        <img src={% static "images/team/vivek.jpeg" %} alt="Vivek Mittal">
 					</div>
                     <h3 style="text-align: center;">Vivek Mittal</h3>
 				</div>
@@ -247,13 +255,13 @@
                                     <h3 class="portfolio-title"><a >Software Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/rohan.jpeg" title="Rohan Raj">
+                                    <a class="fancybox" href={% static "images/team/rohan.jpeg" %} title="Rohan Raj">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/rohan.jpeg" alt="Rohan Raj">
+                        <img src={% static "images/team/rohan.jpeg" %} alt="Rohan Raj">
 					</div>
                     <h3 style="text-align: center;">Rohan Raj</h3>
 				</div>
@@ -267,13 +275,13 @@
                                     <h3 class="portfolio-title"><a >Software Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/rishabh.jpeg" title="Rishabh Garg">
+                                    <a class="fancybox" href={% static "images/team/rishabh.jpeg" %} title="Rishabh Garg">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/rishabh.jpeg" alt="Rishabh Garg">
+                        <img src={% static "images/team/rishabh.jpeg" %} alt="Rishabh Garg">
 					</div>
                     <h3 style="text-align: center;">Rishabh Garg</h3>
 				</div>
@@ -287,13 +295,13 @@
                                     <h3 class="portfolio-title"><a >Software Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/deepak_k.jpg" title="Deepak Khatri">
+                                    <a class="fancybox" href={% static "images/team/deepak_k.jpg" %} title="Deepak Khatri">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/deepak_k.jpg" alt="Deepak Khatri">
+                        <img src={% static "images/team/deepak_k.jpg" %} alt="Deepak Khatri">
 					</div>
                     <h3 style="text-align: center;">Deepak Khatri</h3>
 				</div>
@@ -307,13 +315,13 @@
                                     <h3 class="portfolio-title"><a >Software Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/akash.jpeg" title="Akash Karnatak">
+                                    <a class="fancybox" href={% static "images/team/akash.jpeg" %} title="Akash Karnatak">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/akash.jpeg" alt="Akash Karnatak">
+                        <img src={% static "images/team/akash.jpeg" %} alt="Akash Karnatak">
 					</div>
                     <h3 style="text-align: center;">Akash Karnatak</h3>
 				</div>
@@ -327,13 +335,13 @@
                                     <h3 class="portfolio-title"><a >Software Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/arshita.jpeg" title="Arshita Kalra">
+                                    <a class="fancybox" href={% static "images/team/arshita.jpeg" %} title="Arshita Kalra">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/arshita.jpeg" alt="Arshita Kalra">
+                        <img src={% static "images/team/arshita.jpeg" %} alt="Arshita Kalra">
 					</div>
                     <h3 style="text-align: center;">Arshita Kalra</h3>
 				</div>
@@ -347,13 +355,13 @@
                                     <h3 class="portfolio-title"><a >Mechanical Team Lead</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/balkar.jpg" title="Balkar Singh">
+                                    <a class="fancybox" href={% static "images/team/balkar.jpg" %} title="Balkar Singh">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/balkar.jpg" alt="Balkar Singh">
+                        <img src={% static "images/team/balkar.jpg" %} alt="Balkar Singh">
 					</div>
                     <h3 style="text-align: center;">Balkar Singh</h3>
 				</div>
@@ -367,13 +375,13 @@
                                     <h3 class="portfolio-title"><a >Mechanical Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/shashwat.jpg" title="Shashwat Gupta">
+                                    <a class="fancybox" href={% static "images/team/shashwat.jpg" %} title="Shashwat Gupta">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/shashwat.jpg" alt="Shashwat Gupta">
+                        <img src={% static "images/team/shashwat.jpg" %} alt="Shashwat Gupta">
 					</div>
                     <h3 style="text-align: center;">Shashwat Gupta</h3>
 				</div>
@@ -387,13 +395,13 @@
                                     <h3 class="portfolio-title"><a >Mechanical Team Member </a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/nikhil.jpg" title="Nikhil Katnor">
+                                    <a class="fancybox" href={% static "images/team/nikhil.jpg" %} title="Nikhil Katnor">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/nikhil.jpg" alt="Nikhil Katnor">
+                        <img src={% static "images/team/nikhil.jpg" %} alt="Nikhil Katnor">
 					</div>
                     <h3 style="text-align: center;">Nikhil Katnor</h3>
 				</div>
@@ -407,13 +415,13 @@
                                     <h3 class="portfolio-title"><a >Mechanical Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/aachman.jpg" title="Aachman Gandhi">
+                                    <a class="fancybox" href={% static "images/team/aachman.jpg" %} title="Aachman Gandhi">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/aachman.jpg" alt="Aachman Gandhi">
+                        <img src={% static "images/team/aachman.jpg" %} alt="Aachman Gandhi">
 					</div>
                     <h3 style="text-align: center;">Aachman Gandhi</h3>
 				</div>
@@ -427,13 +435,13 @@
                                     <h3 class="portfolio-title"><a >Mechanical Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/akshansh.jpeg" title="Akshansh Dhiman">
+                                    <a class="fancybox" href={% static "images/team/akshansh.jpeg" %} title="Akshansh Dhiman">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/akshansh.jpeg" alt="Akshansh Dhiman">
+                        <img src={% static "images/team/akshansh.jpeg" %} alt="Akshansh Dhiman">
 					</div>
                     <h3 style="text-align: center;">Akshansh Dhiman</h3>
 				</div>
@@ -447,13 +455,13 @@
                                     <h3 class="portfolio-title"><a >Electronics Team Lead</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/sudhanshu.jpeg" title="Sudhanshu Chauhan">
+                                    <a class="fancybox" href={% static "images/team/sudhanshu.jpeg" %} title="Sudhanshu Chauhan">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/sudhanshu.jpeg" alt="Sudhanshu Chauhan">
+                        <img src={% static "images/team/sudhanshu.jpeg" %} alt="Sudhanshu Chauhan">
 					</div>
                     <h3 style="text-align: center;">Sudhanshu Chauhan</h3>
 				</div>
@@ -467,13 +475,13 @@
                                     <h3 class="portfolio-title"><a >Electronics Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/anurag.jpeg" title="Anurag Maurya">
+                                    <a class="fancybox" href={% static "images/team/anurag.jpeg" %} title="Anurag Maurya">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/anurag.jpeg" alt="Anurag Maurya">
+                        <img src={% static "images/team/anurag.jpeg" %} alt="Anurag Maurya">
 					</div>
                     <h3 style="text-align: center;">Anurag Maurya</h3>
 				</div>
@@ -487,13 +495,13 @@
                                     <h3 class="portfolio-title"><a >Electronics Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/geetanshu.jpg" title="Geetanshu Arsiya">
+                                    <a class="fancybox" href={% static "images/team/geetanshu.jpg" %} title="Geetanshu Arsiya">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/geetanshu.jpg" alt="Geetanshu Arsiya">
+                        <img src={% static "images/team/geetanshu.jpg" %} alt="Geetanshu Arsiya">
 					</div>
                     <h3 style="text-align: center;">Geetanshu Arsiya</h3>
 				</div>
@@ -507,13 +515,13 @@
                                     <h3 class="portfolio-title"><a >Electronics Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/prachee.jpeg" title="Prachee Mathur">
+                                    <a class="fancybox" href={% static "images/team/prachee.jpeg" %} title="Prachee Mathur">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/prachee.jpeg" alt="Prachee Mathur">
+                        <img src={% static "images/team/prachee.jpeg" %} alt="Prachee Mathur">
 					</div>
                     <h3 style="text-align: center;">Prachee Mathur</h3>
 				</div>
@@ -527,13 +535,13 @@
                                     <h3 class="portfolio-title"><a >Electronics Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/vidhi.jpeg" title="Vidhi desai">
+                                    <a class="fancybox" href={% static "images/team/vidhi.jpeg" %} title="Vidhi desai">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/vidhi.jpeg" alt="Vidhi desai">
+                        <img src={% static "images/team/vidhi.jpeg" %} alt="Vidhi desai">
 					</div>
                     <h3 style="text-align: center;">Vidhi desai</h3>
 				</div>
@@ -547,13 +555,13 @@
                                     <h3 class="portfolio-title"><a >Electronics Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/prabjot singh.jpg" title="Prabjot singh">
+                                    <a class="fancybox" href={% static "images/team/prabjot singh.jpg" %} title="Prabjot singh">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/prabjot singh.jpg" alt="Prabjot singh">
+                        <img src={% static "images/team/prabjot singh.jpg" %} alt="Prabjot singh">
 					</div>
                     <h3 style="text-align: center;">Prabjot singh</h3>
 				</div>
@@ -567,13 +575,13 @@
                                     <h3 class="portfolio-title"><a >Electronics Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/deepak.jpeg" title="Deepak Kumar Sah">
+                                    <a class="fancybox" href={% static "images/team/deepak.jpeg" %} title="Deepak Kumar Sah">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/deepak.jpeg" alt="Deepak Kumar Sah">
+                        <img src={% static "images/team/deepak.jpeg" %} alt="Deepak Kumar Sah">
 					</div>
                     <h3 style="text-align: center;">Deepak Kumar Sah</h3>
 				</div>
@@ -587,13 +595,13 @@
                                     <h3 class="portfolio-title"><a >Electronics Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/ashish.jpeg" title="Ashish Anand">
+                                    <a class="fancybox" href={% static "images/team/ashish.jpeg" %} title="Ashish Anand">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/ashish.jpeg" alt="Ashish">
+                        <img src={% static "images/team/ashish.jpeg" %} alt="Ashish">
 					</div>
                     <h3 style="text-align: center;">Ashish Anand</h3>
 				</div>
@@ -607,13 +615,13 @@
                                     <h3 class="portfolio-title"><a >Life Sciences Team Lead</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/lalit.jpeg" title="Lalit Narayan Mudgal">
+                                    <a class="fancybox" href={% static "images/team/lalit.jpeg" %} title="Lalit Narayan Mudgal">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/lalit.jpeg" alt="Lalit Narayan Mudgal">
+                        <img src={% static "images/team/lalit.jpeg" %} alt="Lalit Narayan Mudgal">
 					</div>
                     <h3 style="text-align: center;">Lalit Narayan Mudgal</h3>
 				</div>
@@ -627,13 +635,13 @@
                                     <h3 class="portfolio-title"><a >Life Sciences Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/pranav.jpeg" title="Pranav R Iyengar">
+                                    <a class="fancybox" href={% static "images/team/pranav.jpeg" %} title="Pranav R Iyengar">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/pranav.jpeg" alt="Pranav R Iyengar">
+                        <img src={% static "images/team/pranav.jpeg" %} alt="Pranav R Iyengar">
 					</div>
                     <h3 style="text-align: center;">Pranav R Iyengar</h3>
 				</div>
@@ -647,13 +655,13 @@
                                     <h3 class="portfolio-title"><a >Life Sciences Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/ayush.jpeg" title="Ayush Nigam">
+                                    <a class="fancybox" href={% static "images/team/ayush.jpeg" %} title="Ayush Nigam">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/ayush.jpeg" alt="Ayush Nigam">
+                        <img src={% static "images/team/ayush.jpeg" %} alt="Ayush Nigam">
 					</div>
                     <h3 style="text-align: center;">Ayush Nigam</h3>
 				</div>
@@ -667,13 +675,13 @@
                                     <h3 class="portfolio-title"><a>Life Sciences Team Member</a></h3>
                                 </div>
                                 <div class="portfolio-expand">
-                                    <a class="fancybox" href="images/team/vishesh.jpeg" title="Vishesh Soni">
+                                    <a class="fancybox" href={% static "images/team/vishesh.jpeg" %} title="Vishesh Soni">
                                         <i class="fa fa-expand"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <img src="images/team/vishesh.jpeg" alt="Vishesh Soni">
+                        <img src={% static "images/team/vishesh.jpeg" %} alt="Vishesh Soni">
 					</div>
                     <h3 style="text-align: center;">Vishesh Soni</h3>
 				</div>
@@ -685,19 +693,17 @@
 		</div> <!-- /.row -->
 	</div> <!-- /.container -->
 
-	
-
 	<footer class="site-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<nav class="footer-nav clearfix">
 						<ul class="footer-menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="project-slideshow.html">Gallery</a></li>
-							<li><a href="blog.html">Blog Posts</a></li>
-							<li><a href="team.html">Team</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href={% url 'index'%}>Home</a></li>
+							<li><a href={% url 'gallery'%}>Gallery</a></li>
+							<li><a href={% url 'blog'%}>Blog Posts</a></li>
+							<li><a href={% url 'team'%}>Team</a></li>
+							<li><a href={% url 'contact'%}>Contact</a></li>
 						</ul> <!-- /.footer-menu -->
 					</nav> <!-- /.footer-nav -->
 				</div> <!-- /.col-md-12 -->
@@ -711,8 +717,8 @@
 	</footer> <!-- /.site-footer -->
 
 	<!-- Scripts -->
-	<script src="js/min/plugins.min.js"></script>
-	<script src="js/min/medigo-custom.min.js"></script>
+	<script src={% static "js/min/plugins.min.js"%}></script>
+	<script src={% static "js/min/medigo-custom.min.js"%}></script>
 
 
 </body>

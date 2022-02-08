@@ -11,32 +11,32 @@
 	Medigo Template
 	http://www.templatemo.com/preview/templatemo_460_medigo
     -->
-
+	{% load static %}
 	<!-- Google Fonts -->
 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700itali" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,500,200,100,600" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="css/misc.css">
-	<link rel="stylesheet" href="css/red-scheme.css">
+	<link rel="stylesheet" href={% static "bootstrap/bootstrap.css"%}>
+	<link rel="stylesheet" href={% static "css/misc.css"%}>
+	<link rel="stylesheet" href={% static "css/red-scheme.css"%}>
 	
 	<!-- JavaScripts -->
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src={% static "js/jquery-1.10.2.min.js"%}></script>
+	<script src={% static "js/jquery-migrate-1.2.1.min.js"%}></script>
 
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href={% static "images/favicon.ico"%} type="image/x-icon" />
 
 </head>
 <body>
 	<div class="responsive_menu">
         <ul class="main_menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="project-slideshow.html">Gallery</a>
+            <li><a href={% url 'index'%}>Home</a></li>
+            <li><a href={% url 'gallery'%}>Gallery</a>
             </li>
-            <li><a href="blog.html">Blogs</a>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="contact.html">Sponsor Us</a></li>
+            <li><a href={% url 'blog'%}>Blogs</a>
+            <li><a href={% url 'team'%}>Team</a></li>
+            <li><a href={% url 'contact'%}>Sponsor Us</a></li>
         </ul> <!-- /.main_menu -->
     </div> <!-- /.responsive_menu -->
 
@@ -48,8 +48,8 @@
 				<div class="col-md-12">
 
 					<div class="pull-left logo">
-						<a href="index.html" style="font-size: 20px;">
-							<img src="images/logo.png">
+						<a href={% url 'index'%} style="font-size: 20px;">
+							<img src={% static "images/logo.png"%}>
 							&nbsp Mars Rover, IIT Mandi
 						</a>
 					</div>	<!-- /.logo -->
@@ -58,13 +58,13 @@
 
 						<nav class="main-nav visible-md visible-lg">
 							<ul class="sf-menu">
-								<li><a href="index.html">Home</a></li>
-					            <li><a href="project-slideshow.html">Gallery</a>
+								<li><a href={% url 'index'%}>Home</a></li>
+					            <li><a href={% url 'gallery'%}>Gallery</a>
 					            </li>
-					            <li class="active"><a href="blog.html">Blogs</a>
+					            <li class="active"><a href={% url 'blog'%}>Blogs</a>
 					            </li>
-					            <li><a href="team.html">Team</a></li>
-          						<li><a href="contact.html">Sponsor Us</a></li>
+					            <li><a href={% url 'team'%}>Team</a></li>
+          						<li><a href={% url 'contact'%}>Sponsor Us</a></li>
 							</ul> <!-- /.sf-menu -->
 						</nav> <!-- /.main-nav -->
 
@@ -108,7 +108,7 @@
 						<div class="post-blog">
 							<div class="blog-image">
 								<a href="blog-1.html">
-									<img src="images/includes/blog1.jpg" alt="">
+									<img src={% static "images/includes/blog1.jpg"%} alt="">
 								</a>
 							</div> <!-- /.blog-image -->
 							<div class="blog-content">
@@ -166,15 +166,7 @@
 							</div> <!-- /.blog-content -->
 						</div> <!-- /.post-blog -->
 					</div> <!-- /.col-md-12 -->
-					<div class="col-md-12">
-						<ul class="pages">
-							<li><a href="#" class="active">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">...</a></li>
-							<li><a href="#">13</a></li>
-						</ul>
-					</div> <!-- /.col-md-12 -->
+					
 				</div> <!-- /.row -->
 			</div> <!-- /.col-md-8 -->
 
@@ -210,19 +202,17 @@
 		</div> <!-- /.row -->
 	</div> <!-- /.container -->	
 
-	
-
 	<footer class="site-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<nav class="footer-nav clearfix">
 						<ul class="footer-menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="project-slideshow.html">Gallery</a></li>
-							<li><a href="blog.html">Blog Posts</a></li>
-							<li><a href="team.html">Team</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href={% url 'index'%}>Home</a></li>
+							<li><a href={% url 'gallery'%}>Gallery</a></li>
+							<li><a href={% url 'blog'%}>Blog Posts</a></li>
+							<li><a href={% url 'team'%}>Team</a></li>
+							<li><a href={% url 'contact'%}>Contact</a></li>
 						</ul> <!-- /.footer-menu -->
 					</nav> <!-- /.footer-nav -->
 				</div> <!-- /.col-md-12 -->
@@ -236,8 +226,8 @@
 	</footer> <!-- /.site-footer -->
 
 	<!-- Scripts -->
-	<script src="js/min/plugins.min.js"></script>
-	<script src="js/min/medigo-custom.min.js"></script>
+	<script src={% static "js/min/plugins.min.js"%}></script>
+	<script src={% static "js/min/medigo-custom.min.js"%}></script>
 
 
 </body>

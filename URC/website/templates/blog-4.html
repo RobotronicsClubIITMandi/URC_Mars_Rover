@@ -31,12 +31,12 @@
 <body>
 	<div class="responsive_menu">
         <ul class="main_menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="project-slideshow.html">Gallery</a>
+            <li><a href={% url 'index'%}>Home</a></li>
+            <li><a href={% url 'gallery'%}>Gallery</a>
             </li>
-            <li><a href="blog.html">Blogs</a>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="contact.html">Sponsor Us</a></li>
+            <li><a href={% url 'blog'%}>Blogs</a>
+            <li><a href={% url 'team'%}>Team</a></li>
+            <li><a href={% url 'contact'%}>Sponsor Us</a></li>
         </ul> <!-- /.main_menu -->
     </div> <!-- /.responsive_menu -->
 
@@ -48,7 +48,7 @@
 				<div class="col-md-12">
 
 					<div class="pull-left logo">
-						<a href="index.html" style="font-size: 20px;">
+						<a href={% url 'index'%} style="font-size: 20px;">
 							<img src="images/logo.png">
 							&nbsp Mars Rover, IIT Mandi
 						</a>
@@ -58,13 +58,13 @@
 
 						<nav class="main-nav visible-md visible-lg">
 							<ul class="sf-menu">
-								<li><a href="index.html">Home</a></li>
-					            <li><a href="project-slideshow.html">Gallery</a>
+								<li><a href={% url 'index'%}>Home</a></li>
+					            <li><a href={% url 'gallery'%}>Gallery</a>
 					            </li>
-					            <li class="active"><a href="blog.html">Blogs</a>
+					            <li class="active"><a href={% url 'blog'%}>Blogs</a>
 					            </li>
-					            <li><a href="team.html">Team</a></li>
-          						<li><a href="contact.html">Sponsor Us</a></li>
+					            <li><a href={% url 'team'%}>Team</a></li>
+          						<li><a href={% url 'contact'%}>Sponsor Us</a></li>
 							</ul> <!-- /.sf-menu -->
 						</nav> <!-- /.main-nav -->
 
@@ -89,7 +89,7 @@
 			<div class="container pageTitle">
 				<div class="row">
 					<div class="col-md-6 col-sm-6">
-						<h2 class="page-title">Blog 3 </h2>
+						<h2 class="page-title">Blog 4 </h2>
 					</div> <!-- /.col-md-6 -->
 					<div class="col-md-6 col-sm-6 text-right">
 						<span class="page-location">Home / Blog Single</span>
@@ -112,7 +112,7 @@
 							<div class="blog-content">
 								<span class="meta-date"><a href="#">15 February 2022</a></span>
 								<span class="meta-comments"><a href="#blog-comments">0 Comments</a></span>
-								<h3>Blog 3 Heading</h3>
+								<h3>Blog 4 Heading</h3>
 								<p> Coming Soon.</p>
 								<div class="tag-items">
                                     <span class="small-text">Tags:</span>
@@ -268,11 +268,11 @@
 				<div class="col-md-12">
 					<nav class="footer-nav clearfix">
 						<ul class="footer-menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="project-slideshow.html">Gallery</a></li>
-							<li><a href="blog.html">Blog Posts</a></li>
-							<li><a href="team.html">Team</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href={% url 'index'%}>Home</a></li>
+							<li><a href={% url 'gallery'%}>Gallery</a></li>
+							<li><a href={% url 'blog'%}>Blog Posts</a></li>
+							<li><a href={% url 'team'%}>Team</a></li>
+							<li><a href={% url 'contact'%}>Contact</a></li>
 						</ul> <!-- /.footer-menu -->
 					</nav> <!-- /.footer-nav -->
 				</div> <!-- /.col-md-12 -->

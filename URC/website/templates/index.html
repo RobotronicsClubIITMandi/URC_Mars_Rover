@@ -11,32 +11,37 @@
 	Medigo Template
 	http://www.templatemo.com/preview/templatemo_460_medigo
     -->
+	{% load static %}
 
 	<!-- Google Fonts -->
 	<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700itali" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,500,200,100,600" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="css/misc.css">
-	<link rel="stylesheet" href="css/red-scheme.css">
+	<link rel="stylesheet" href={% static "bootstrap/bootstrap.css"%}>
+	<link rel="stylesheet" href={% static "css/misc.css"%}>
+	<link rel="stylesheet" href={% static "css/red-scheme.css"%}>
 	
 	<!-- JavaScripts -->
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src={% static "js/jquery-1.10.2.min.js"%}></script>
+	<script src={% static "js/jquery-migrate-1.2.1.min.js"%}></script>
 
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href={% static "images/favicon.ico"%} type="image/x-icon" />
 
 </head>
 <body>
 	<div class="responsive_menu">
         <ul class="main_menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="project-slideshow.html">Gallery</a>
-            </li>
-            <li><a href="blog.html">Blogs</a>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="contact.html">Sponsor Us</a></li>
+            <li><a href={% url 'index' %}>Home</a></li>
+            <li><a href={% url 'gallery' %}>Gallery</a></li>
+            <li><a href={% url 'blog' %}>Blogs</a>
+            <li><a href={% url 'team' %}>Team</a></li>
+            <li><a href={% url 'contact' %}>Sponsor Us</a></li>
+			{% if user.is_authenticated %}
+				<li ><a href={% url 'logout' %}>Logout</a></li>
+			{% else %}
+				<li ><a href={% url "social:begin" "google-oauth2" %}>Log in via Google</a></li>
+			{% endif %}
         </ul> <!-- /.main_menu -->
     </div> <!-- /.responsive_menu -->
 
@@ -48,8 +53,8 @@
 				<div class="col-md-12">
 
 					<div class="pull-left logo">
-						<a href="index.html" style="font-size: 20px;">
-							<img src="images/logo.png">
+						<a href={% url 'index' %} style="font-size: 20px;">
+							<img src={% static "images/logo.png"%}>
 							&nbsp Mars Rover, IIT Mandi
 						</a>
 					</div>	<!-- /.logo -->
@@ -58,13 +63,19 @@
 
 						<nav class="main-nav visible-md visible-lg">
 							<ul class="sf-menu">
-								<li class="active"><a href="index.html">Home</a></li>
-					            <li><a href="project-slideshow.html">Gallery</a>
-					            </li>
-					            <li><a href="blog.html">Blogs</a>
-					            </li>
-					            <li><a href="team.html">Team</a></li>
-          						<li><a href="contact.html">Sponsor Us</a></li>
+								<li class='active'><a href={% url 'index' %}>Home</a></li>
+								<li><a href={% url 'gallery' %}>Gallery</a></li>
+								<li><a href={% url 'blog' %}>Blogs</a>
+								<li><a href={% url 'team' %}>Team</a></li>
+								<li><a href={% url 'contact' %}>Sponsor Us</a></li>
+								{% if user.is_authenticated %}
+									<li class='active'><a href={% url 'logout' %}>Logout <img src="https://img.icons8.com/external-others-sbts2018/32/000000/external-logout-social-media-others-sbts2018.png"/> </a></li>
+								{% else %}
+									<li class='active'><a href={% url "social:begin" "google-oauth2" %}><img src="https://img.icons8.com/fluency/32/000000/google-logo.png"/><img src="https://img.icons8.com/external-kmg-design-outline-color-kmg-design/32/000000/external-login-real-estate-kmg-design-outline-color-kmg-design.png"/></a></li>
+								{% endif %}
+								
+								
+								
 							</ul> <!-- /.sf-menu -->
 						</nav> <!-- /.main-nav -->
 
@@ -113,7 +124,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h4 class="cta-title"><strong>Wanna join the team ?</strong></h4>
-					<a href="contact.html" class="main-button accent-color">Contact Us<i class="icon-button fa fa-arrow-right"></i></a>
+					<a href={% url 'contact'%} class="main-button accent-color">Contact Us<i class="icon-button fa fa-arrow-right"></i></a>
 				</div> <!-- /.col-md-12 -->
 			</div> <!-- /.row -->
 		</div> <!-- /.container -->
@@ -138,7 +149,7 @@
 						<div class="overlay-inner">
 							<div class="portfolio-infos">
 								<span class="meta-category"></span>
-								<h3 class="portfolio-title"><a href="project-slideshow.html">Robotic Arm</a></h3>
+								<h3 class="portfolio-title"><a href={% url 'gallery'%}>Robotic Arm</a></h3>
 							</div>
 							<div class="portfolio-expand">
 								<a class="fancybox" href="images/includes/P1.jpg" title="Robotic Arm">
@@ -147,7 +158,7 @@
 							</div>
 						</div>
 					</div>
-					<img src="images/includes/P1.jpg" alt="Visual Admin">
+					<img src={% static "images/includes/P1.jpg" %} alt="Visual Admin">
 				</div>
 			</div> <!-- /.item -->
 			<div class="item">
@@ -156,7 +167,7 @@
 						<div class="overlay-inner">
 							<div class="portfolio-infos">
 								<span class="meta-category"></span>
-								<h3 class="portfolio-title"><a href="project-slideshow.html">Autonomous Drone</a></h3>
+								<h3 class="portfolio-title"><a href={% url 'gallery'%}>Autonomous Drone</a></h3>
 							</div>
 							<div class="portfolio-expand">
 								<a class="fancybox" href="images/includes/P2.jpg" title="Autonomous Drone">
@@ -165,7 +176,7 @@
 							</div>
 						</div>
 					</div>
-					<img src="images/includes/P2.jpg" alt="Compass Template">
+					<img src={% static "images/includes/P2.jpg" %} alt="Compass Template">
 				</div>
 			</div> <!-- /.item -->
 			<div class="item">
@@ -174,7 +185,7 @@
 						<div class="overlay-inner">
 							<div class="portfolio-infos">
 								<span class="meta-category"></span>
-								<h3 class="portfolio-title"><a href="project-slideshow.html">3D Terrain Mapper</a></h3>
+								<h3 class="portfolio-title"><a href={% url 'gallery'%}>3D Terrain Mapper</a></h3>
 							</div>
 							<div class="portfolio-expand">
 								<a class="fancybox" href="images/includes/P3.jpg" title="3D Terrain Mapper">
@@ -183,7 +194,7 @@
 							</div>
 						</div>
 					</div>
-					<img src="images/includes/P3.jpg" alt="Awesome Theme">
+					<img src={% static "images/includes/P3.jpg" %} alt="Awesome Theme">
 				</div>
 			</div> <!-- /.item -->
 			<div class="item">
@@ -192,7 +203,7 @@
 						<div class="overlay-inner">
 							<div class="portfolio-infos">
 								<span class="meta-category"></span>
-								<h3 class="portfolio-title"><a href="project-slideshow.html">Autonomous RC Car</a></h3>
+								<h3 class="portfolio-title"><a href={% url 'gallery'%}>Autonomous RC Car</a></h3>
 							</div>
 							<div class="portfolio-expand">
 								<a class="fancybox" href="images/includes/P4.jpg" title="Autonomous RC Car">
@@ -201,7 +212,7 @@
 							</div>
 						</div>
 					</div>
-					<img src="images/includes/P4.jpg" alt="Volton Personal Site">
+					<img src={% static "images/includes/P4.jpg" %} alt="Volton Personal Site">
 				</div>
 			</div> <!-- /.item -->
 			<div class="item">
@@ -210,7 +221,7 @@
 						<div class="overlay-inner">
 							<div class="portfolio-infos">
 								<span class="meta-category"></span>
-								<h3 class="portfolio-title"><a href="project-slideshow.html">Anemometer</a></h3>
+								<h3 class="portfolio-title"><a href={% url 'gallery'%}>Anemometer</a></h3>
 							</div>
 							<div class="portfolio-expand">
 								<a class="fancybox" href="images/includes/P5.jpg" title="Anemometer">
@@ -219,7 +230,7 @@
 							</div>
 						</div>
 					</div>
-					<img src="images/includes/P5.jpg" alt="Rectangle Design">
+					<img src={% static "images/includes/P5.jpg" %} alt="Rectangle Design">
 				</div>
 			</div> <!-- /.item -->
 			
@@ -243,7 +254,7 @@
 					<div class="col-md-2 col-sm-2">
 						<div class="team-member">
 							<div class="thumb-post">
-								<img src="images/sponsors/sntc.jpg" style="height: 150px !important; weight: 150px !important;">
+								<img src={% static "images/sponsors/sntc.jpg" %} style="height: 150px !important; weight: 150px !important;">
 							</div>
 							<div>
 								<h4 align="center">
@@ -256,7 +267,7 @@
 					<div class="col-md-2 col-sm-2">
 						<div class="team-member">
 							<div class="thumb-post">
-								<img src="images/sponsors/simhatel.webp" style="height: 150px !important; weight: 150px !important;">
+								<img src={% static "images/sponsors/simhatel.webp" %} style="height: 150px !important; weight: 150px !important;">
 							</div>
 							<div>
 								<h4 align="center">
@@ -269,7 +280,7 @@
 					<div class="col-md-2 col-sm-2">
 						<div class="team-member">
 							<div class="thumb-post">
-								<img src="images/sponsors/MathWorks.jpg" style="height: 150px !important; weight: 150px !important;">
+								<img src={% static "images/sponsors/MathWorks.jpg" %} style="height: 150px !important; weight: 150px !important;">
 							</div>
 							<div>
 								<h4 align="center">
@@ -282,7 +293,7 @@
 					<div class="col-md-2 col-sm-2">
 						<div class="team-member">
 							<div class="thumb-post">
-								<img src="images/sponsors/ieee.svg" style="height: 150px !important; weight: 150px !important;">
+								<img src={% static "images/sponsors/ieee.svg" %} style="height: 150px !important; weight: 150px !important;">
 							</div>
 							<div>
 								<h4 align="center">
@@ -295,7 +306,7 @@
 					<div class="col-md-2 col-sm-2">
 						<div class="team-member">
 							<div class="thumb-post">
-								<img src="images/sponsors/ras.png" style="height: 150px !important; weight: 150px !important;">
+								<img src={% static "images/sponsors/ras.png" %} style="height: 150px !important; weight: 150px !important;">
 							</div>
 							<div>
 								<h4 align="center">
@@ -308,7 +319,7 @@
 					<div class="col-md-2 col-sm-2">
 						<div class="team-member">
 							<div class="thumb-post">
-								<img src="images/sponsors/catalyst.png" style="height: 150px !important; weight: 150px !important;">
+								<img src={% static "images/sponsors/catalyst.png" %} style="height: 150px !important; weight: 150px !important;">
 							</div>
 							<div>
 								<h4 align="center">
@@ -335,40 +346,21 @@
 		        	</div> <!-- /.col-md-12 -->
 		        </div> <!-- /.row -->
 		        <div class="row latest-posts">
+					{% for recent_blog in recent_blogs %}
 		        	<div class="col-md-4 col-sm-6">
-		        		<div class="blog-post clearfix">
+						<div class="blog-post clearfix">
 		        			<div class="thumb-post">
-		        				<a href="blog-1.html"><img src="images/includes/blogthumb1.jpg" alt="" class="img-circle"></a>
+		        				<a href={% url 'detailed-blog' recent_blog.id %}><img src={% static "images/includes/blogthumb1.jpg" %} alt="" class="img-circle"></a>
 		        			</div>
 		        			<div class="blog-post-content">
-		        				<h4 class="post-title"><a href="blog-1.html">Blog 1</a></h4>
-		        				<h4 class="post-title"><a href="blog-1.html">Introduction to URC</a></h4>
-		        				<span class="meta-post-date">28th January 2022</span>
+		        				<h4 class="post-title"><a href={% url 'detailed-blog' recent_blog.id %}>Blog:</a></h4>
+		        				<h4 class="post-title"><a href={% url 'detailed-blog' recent_blog.id %}>{{ recent_blog.blog_title }}</a></h4>
+		        				<span class="meta-post-date">{{ blog.pub_date|date:"d M, Y D" }}</span>
 		        			</div>
-		        		</div> <!-- /.blog-post -->
-		        	</div> <!-- /.col-md-4 -->
-		        	<div class="col-md-4 col-sm-6">
-		        		<div class="blog-post clearfix">
-		        			<div class="thumb-post">
-		        				<a href="blog-2.html"><img src="images/includes/blogthumb2.jpg" alt="" class="img-circle"></a>
-		        			</div>
-		        			<div class="blog-post-content">
-		        				<h4 class="post-title"><a href="blog-2.html">Blog 2</a></h4>
-		        				<span class="meta-post-date">15 February 2022</span>
-		        			</div>
-		        		</div> <!-- /.blog-post -->
-		        	</div> <!-- /.col-md-4 -->
-		        	<div class="col-md-4 col-sm-6">
-		        		<div class="blog-post clearfix">
-		        			<div class="thumb-post">
-		        				<a href="blog-3.html"><img src="images/includes/blogthumb3.jpg" alt="" class="img-circle"></a>
-		        			</div>
-		        			<div class="blog-post-content">
-		        				<h4 class="post-title"><a href="blog-3.html">Blog 3 </a></h4>
-		        				<span class="meta-post-date">5th March 2022</span>
-		        			</div>
-		        		</div> <!-- /.blog-post -->
-		        	</div> <!-- /.col-md-4 -->
+		        		</div> 
+		        	</div> 
+					{% endfor %}
+		        	
 		        </div> <!-- /.row -->
 		    </div> <!-- /.container -->
 	    </div> <!-- /.parallax-overlay -->
@@ -380,11 +372,11 @@
 				<div class="col-md-12">
 					<nav class="footer-nav clearfix">
 						<ul class="footer-menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="project-slideshow.html">Gallery</a></li>
-							<li><a href="blog.html">Blog Posts</a></li>
-							<li><a href="team.html">Team</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href={% url 'index'%}>Home</a></li>
+							<li><a href={% url 'gallery'%}>Gallery</a></li>
+							<li><a href={% url 'blog'%}>Blog Posts</a></li>
+							<li><a href={% url 'team'%}>Team</a></li>
+							<li><a href={% url 'contact'%}>Contact</a></li>
 						</ul> <!-- /.footer-menu -->
 					</nav> <!-- /.footer-nav -->
 				</div> <!-- /.col-md-12 -->
@@ -398,8 +390,8 @@
 	</footer> <!-- /.site-footer -->
 
 	<!-- Scripts -->
-	<script src="js/min/plugins.min.js"></script>
-	<script src="js/min/medigo-custom.min.js"></script>
+	<script src={% static "js/min/plugins.min.js" %}></script>
+	<script src={% static "js/min/medigo-custom.min.js" %}></script>
 
 </body>
 </html>
