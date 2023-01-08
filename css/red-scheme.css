@@ -22,14 +22,23 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #31373a;
   font-family: "Raleway", sans-serif;
   font-weight: normal;
 }
 
-h1 a, h2 a, h3 a,
-h4 a, h5 a, h6 a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   font-weight: inherit;
 }
 
@@ -69,26 +78,32 @@ p.lead {
   line-height: 36px;
 }
 
-em, i {
+em,
+i {
   font-style: italic;
 }
 
-strong, b {
+strong,
+b {
   font-weight: bold;
   color: #31373a;
 }
 
-a, a:visited {
+a,
+a:visited {
   color: #ff554e;
   text-decoration: none !important;
   outline: 0;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   color: #777777;
 }
 
-p a, p a:visited {
+p a,
+p a:visited {
   line-height: inherit;
 }
 
@@ -131,7 +146,9 @@ img::-moz-selection {
   margin-bottom: 40px !important;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -141,29 +158,42 @@ img::-moz-selection {
   outline: 0;
 }
 
-.footer-menu, .copyright-text {
+.footer-menu,
+.copyright-text {
   text-align: center;
 }
 
-.main-nav ul, .main_menu, .main_menu li ul, #filters, .pages, .project-single .meta-post, .archive-wrapper .archive-list, .categories ul, .thumbs, .footer-menu {
+.main-nav ul,
+.main_menu,
+.main_menu li ul,
+#filters,
+.pages,
+.project-single .meta-post,
+.archive-wrapper .archive-list,
+.categories ul,
+.thumbs,
+.footer-menu {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-a, a:visited {
+a,
+a:visited {
   -webkit-transition: all 150ms ease-in;
   -moz-transition: all 150ms ease-in;
   -o-transition: all 150ms ease-in;
   transition: all 150ms ease-in;
 }
 
-.service-section, .first-widget {
+.service-section,
+.first-widget {
   position: relative;
   margin-top: 108px;
 }
 
-.light-content, #blogPosts {
+.light-content,
+#blogPosts {
   margin-top: 100px;
 }
 
@@ -175,7 +205,11 @@ a, a:visited {
   top: 0;
   left: 0;
   width: 100%;
-  background: black;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.966),
+    hsla(0, 0%, 0%, 0.856)
+  );
   box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 3px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 3px;
@@ -289,7 +323,7 @@ a.menu-toggle-btn i {
   margin-top: 10px;
 }
 .main_menu li ul li:before {
-  content: '-';
+  content: "-";
   color: gray;
   margin-right: 10px;
 }
@@ -392,7 +426,8 @@ label {
   color: #aaaaaa;
 }
 
-input, textarea {
+input,
+textarea {
   border: 0;
   color: #777777;
   padding: 8px 14px;
@@ -589,12 +624,12 @@ blockquote {
   color: #31373a;
 }
 #filters li:after {
-  content: '/';
+  content: "/";
   color: #c3c3c3;
   margin-left: 20px;
 }
 #filters li:last-child:after {
-  content: '';
+  content: "";
 }
 #filters li.active {
   color: #ff554e;
@@ -761,13 +796,13 @@ blockquote {
   right: 0;
   width: 40px;
   height: 48;
-  content: 'ddd';
+  content: "ddd";
   margin-right: 2px;
   margin-top: -25px;
 }
 .owl-next:after {
-  font-family: 'FontAwesome';
-  content: '\f054';
+  font-family: "FontAwesome";
+  content: "\f054";
   color: #31373a;
   line-height: 48px;
   text-align: center;
@@ -783,8 +818,8 @@ blockquote {
   margin-top: -25px;
 }
 .owl-prev:after {
-  font-family: 'FontAwesome';
-  content: '\f053';
+  font-family: "FontAwesome";
+  content: "\f053";
   color: #31373a;
   line-height: 48px;
   text-align: center;
@@ -888,7 +923,8 @@ blockquote {
   margin-bottom: 40px;
   color: #aaaaaa;
 }
-.testimonial-author:before, .testimonial-author:after {
+.testimonial-author:before,
+.testimonial-author:after {
   content: "-";
   color: #c3c3c3;
   margin: 0 10px;
@@ -961,13 +997,44 @@ blockquote {
   overflow: hidden;
   width: 80px;
   height: 80px;
-  border: 3px solid white;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
+  /* border: 3px solid white; */
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+  border-radius: 10%;
   float: left;
+}
+.latest-posts .thumb-post::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  box-sizing: border-box;
+  border-bottom: 3px solid transparent;
+  border-left: 3px solid transparent;
+  transition: all 0.8s ease;
+}
+
+.latest-posts .thumb-post::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  box-sizing: border-box;
+  border-top: 3px solid transparent;
+  border-right: 3px solid transparent;
+  transition: all 0.8s ease;
+}
+.latest-posts .thumb-post:hover::after,
+.latest-posts .thumb-post:hover::before {
+  border-color: royalblue;
+  width: 100%;
+  height: 100%;
 }
 .latest-posts .blog-post-content {
   overflow: hidden;
@@ -1027,8 +1094,9 @@ blockquote {
   color: #ff554e;
 }
 
-.meta-date:after, .meta-comments:after {
-  content: '/';
+.meta-date:after,
+.meta-comments:after {
+  content: "/";
   margin-left: 10px;
 }
 
@@ -1103,13 +1171,13 @@ blockquote {
   font-size: 14px;
 }
 #blog-comments .media-heading a span:after {
-  content: '/';
+  content: "/";
   color: #aaaaaa;
   font-size: 13px;
   margin: 0 10px;
 }
 #blog-comments .media-heading a span:last-of-type:after {
-  content: '';
+  content: "";
 }
 
 .comment-form {
@@ -1118,7 +1186,10 @@ blockquote {
 .comment-form .widget-inner {
   margin-top: 40px;
 }
-.comment-form #email-id, .comment-form #name-id, .comment-form #site-id, .comment-form textarea {
+.comment-form #email-id,
+.comment-form #name-id,
+.comment-form #site-id,
+.comment-form textarea {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
@@ -1142,7 +1213,7 @@ blockquote {
   line-height: 28px;
 }
 .archive-wrapper .archive-list li:before {
-  content: '-';
+  content: "-";
   color: #aaaaaa;
   margin-right: 10px;
 }
@@ -1199,7 +1270,7 @@ blockquote {
 }
 
 .categories ul li:before {
-  content: '-';
+  content: "-";
   color: #aaaaaa;
   margin-right: 10px;
 }
@@ -1257,7 +1328,10 @@ blockquote {
 .contact-form .widget-inner {
   margin-top: 40px;
 }
-.contact-form #email, .contact-form #name, .contact-form #subject, .contact-form textarea {
+.contact-form #email,
+.contact-form #name,
+.contact-form #subject,
+.contact-form textarea {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
@@ -1346,10 +1420,10 @@ blockquote {
   }
 }
 @media (max-width: 767px) {
-  .parallax { 
-	background-position: center center !important; 
+  .parallax {
+    background-position: center center !important;
   }
-  
+
   .cta .cta-title {
     display: block;
     margin-bottom: 30px;
