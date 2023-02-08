@@ -1497,3 +1497,79 @@ blockquote {
     padding: 12px 50px;
   }
 }
+
+.contact-map iframe {
+	width: 100%;
+	height: 340px;
+	border: none;
+}
+
+.contact-text h1 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 36px;
+	font-weight: 600;
+	color: black;
+	margin: 0px;
+	padding-bottom: 5px;
+}
+.contact-text h2 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	font-weight: 500;
+	color: #444;
+	margin: 0px;
+	padding-top: 25px;
+}
+.contact-text h2 i {
+	color: black
+}
+.contact-text p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #000;
+	margin: 0px;
+	padding-top: 5px;
+	padding-left: 24px;
+	font-weight: 100;
+}
+
+.map-section{
+  margin-top: 20px;
+  	width: 100%;
+	height: auto;
+	/* background: lightcyan; */
+  background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+	padding: 24px;
+    --b: 5px;  
+  --s: 30px; 
+  --c1: #215A6D;
+  --c2: #92C7A3;
+  
+  
+  position: relative;
+}
+
+
+.map-section::before {
+  content:"";
+  position: absolute;
+  inset: 0;
+  padding: var(--b);
+  background: 
+    repeating-conic-gradient(var(--c1) 0 25%,var(--c2) 0 50%) 
+    0 0/var(--s) var(--s) round;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+@media (max-width: 992px) {
+  .contact-text h1{
+    text-align: center;
+  }
+  .contact-text h2 {
+    margin-left: 10px;
+  }
+}
