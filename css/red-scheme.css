@@ -1573,3 +1573,37 @@ blockquote {
     margin-left: 10px;
   }
 }
+.nav  ul  {
+  display: inline;
+  float: left;
+  font-size: 18px;
+  
+}
+
+.nav ul li {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+    text-align: center;
+  background-color: lightcyan;
+}
+
+.nav ul li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width:1200px) {
+  
+  .nav ul {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 2rem;
+  }
+  
+  .nav ul li  {
+    float: left;
+    padding: 15px;
+  }
+}
