@@ -127,58 +127,22 @@
 		</div>
 
 		<div class = "container">
-				<div class="row">
-                    <div class="col-md-12">
-                        <div class="contact-form">
-                            <h3>Send a Direct Message</h3>
-	                        <div class="widget-inner">
-                            <form action="https://formspree.io/f/xlezjrrq" method="post" id="contact-form">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <p>
-                                            <label for="name">Your Name:</label>
-                                            <input type="text" name="name" id="name">
-                                        </p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p>
-                                            <label for="email">Email Address:</label>
-                                             <input type="text" name="email" id="email">
-                                        </p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <p>
-                                            <label for="subject">Subject:</label>
-                                             <input type="text" name="subject" id="subject">
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p>
-                                            <label for="message">Your message:</label>
-                                            <textarea name="message" id="message"></textarea>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <button class="mainBtn" id="submit">Send Message</button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                	<div class="col-md-12">
-                                		<div id="result"></div>
-                                	</div> <!-- /.col-md-12 -->
-                                </div> <!-- /.row -->
-                            </form>
-                          </div> <!-- /.widget-inner -->
-                        </div> <!-- /.contact-form -->
-                    </div> <!-- /.col-md-12 -->
-                </div> <!-- /.row -->
-			</div> <!-- /.col-md-8 -->
-
-
+		<div class = "message-box">
+			<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h2 class = "message-heading">Send a Direct Message</h2>
+				<form action="https://formspree.io/f/xlezjrrq" method="post" id="contact-form">
+				<input type="text" class="field" placeholder="Your Name" name = "name">
+				<input type="text" class="field" placeholder="Your Email" name="email">
+				<input type="text" class="field" placeholder="Subject" name="subject">
+				<textarea placeholder="Message" class="field" name = "message"></textarea>
+				<button class="btn">Send</button>
+			</form>
+			</div>
+		</div>
+		</div>
+	</div>
 					
 					<!-- <div class="sidebar-widget">
 						<h5 class="widget-title">Categories</h5>
