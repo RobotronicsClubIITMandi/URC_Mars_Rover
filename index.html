@@ -96,7 +96,7 @@
       <div class="parallax-overlay">
         <div class="container home-intro-content">
           <div class="row">
-            <div class="col-md-12" style="background: rgba(0,0,0,0.3); alp">
+            <div class="col-md-12" style="background: rgba(0,0,0,0.3); ">
               <h2>Exploring Mars - The Red Planet</h2>
               <p>
                 Team Deimos is a group of young, enthusiastic students from IIT
@@ -134,7 +134,7 @@
       </div>
     </section>
 
-    <section class="dark-content portfolio">
+    <section class="portfolio">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -280,7 +280,36 @@
       <!-- /#owl-demo -->
     </section>
     <!-- /.portfolio-holder -->
+    <section >
+      <div class="holder">
+      <div id="model">
+        <model-viewer
+          src="full_rover_assembly_3d_model_meshmixer.glb"
+          alt="A 3D model of a robot"
+          auto-rotate=""
+          camera-controls=""
+          background-color="black"
+        >
+        </div>
+      </model-viewer>
+               <div id="cad-text">
+            <h1>The model on the left is for you to experiment with.</h1>
+            <h1>Watch it rotate on its own or control it with the mouse</h1>
+            <h1>The model can be magnified as well!</h1>
+        </div>
 
+      
+      <script
+        type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"
+      ></script>
+      <!-- Loads model-viewer for older browsers -->
+      <script
+        nomodule
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
+      ></script>
+      </div>
+    </section> 
     <section class="light-content our-team">
       <div class="container">
         <div class="row">
